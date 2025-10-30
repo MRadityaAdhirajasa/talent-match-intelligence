@@ -241,17 +241,41 @@ if submitted:
             model = genai.GenerativeModel('gemini-2.0-flash-lite') 
             
             prompt = f"""
-            Anda adalah asisten Perekrutan AI.
-            Buatkan profil pekerjaan profesional untuk lowongan berikut:
+            Anda adalah asisten Perekrutan AI ahli.
+            Tugas Anda adalah membuat profil pekerjaan profesional dalam Bahasa Indonesia, berdasarkan input yang diberikan.
             
+            Format output Anda HARUS mengikuti struktur spesifik ini:
+            1.  **Job requirements**: Daftar poin-poin persyaratan teknis dan soft-skill.
+            2.  **Job description**: Paragraf singkat yang menjelaskan inti dari peran tersebut.
+            3.  **key competencies**: Daftar poin-poin alat (tools) dan teknologi spesifik.
+            
+            Berikut adalah CONTOH output yang bagus untuk peran "Data Analyst":
+            --- CONTOH MULAI ---
+            Job requirements:
+            * Keahlian SQL: complex joins, window functions, CTEs, performance tuning basics.
+            * R atau Python untuk analisis (pandas/dplyr), statistik, dan prototyping cepat (Streamlit/Shiny/Dash).
+            * BI tooling: Looker/Power BI/Tableau (modeling, permissions, dan production dashboards).
+            * Fundamental data modeling (star schema, slowly changing dims, metrics layer) dan version control.
+            * Praktik terbaik visualisasi dan data storytelling untuk audiens non-teknis.
+            
+            Job description:
+            Anda mengubah pertanyaan bisnis menjadi jawaban berbasis data. Anda akan memiliki siklus analisis end-to-end: memahami konteks, menyusun dashboard yang jelas, dan membuat narasi yang mendorong keputusan. Anda menyeimbangkan kedalaman teknis (SQL, R/Python, BI) dengan pemikiran bisnis yang ketat.
+            
+            key competencies:
+            * SQL (Postgres/Snowflake/BigQuery), Git, DBT (nice), Airflow (nice)
+            * R/Python (pandas/numpy/scipy atau tidyverse), Streamlit/Shiny
+            * Looker/Tableau/Power BI, Excel/Sheets
+            --- CONTOH SELESAI ---
+            
+            Sekarang, gunakan format dan gaya yang SAMA PERSIS untuk membuat profil pekerjaan baru berdasarkan input berikut. 
+            JANGAN menyalin konten contoh di atas, tetapi tiru GAYA dan TINGKAT KEDETAILAN-nya.
+            
+            Input Baru:
             Nama Peran: {role_name}
             Level Pekerjaan: {job_level}
             Tujuan Peran: {role_purpose}
             
-            Harap hasilkan output dalam format markdown yang rapi, yang mencakup:
-            1.  **Deskripsi Pekerjaan** (Job Description)
-            2.  **Persyaratan Kunci** (Job Requirements)
-            3.  **Kompetensi Utama** (Key Competencies)
+            HASILKAN OUTPUT (dalam Bahasa Indonesia):
             """
             
             with st.spinner("Menghasilkan profil pekerjaan dengan AI..."):
@@ -335,5 +359,6 @@ if submitted:
 else:
 
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
+
 
 
