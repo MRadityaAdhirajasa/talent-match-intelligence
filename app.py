@@ -206,7 +206,7 @@ def run_dynamic_matching(benchmark_ids, all_data):
     return results_df, benchmark_profile
 
 # --- 3. UI SIDEBAR ---
-st.sidebar.title("Buat Lowongan Pekerjaan Baru")
+st.sidebar.title("Informasi Pekerjaan")
 employee_list = DB_DATA['employees']['employee_id'].tolist()
 
 with st.sidebar.form(key='vacancy_form'):
@@ -383,6 +383,7 @@ if submitted:
 else:
 
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
+
 
 
 
