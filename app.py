@@ -12,6 +12,9 @@ warnings.filterwarnings('ignore')
 @st.cache_data
 def load_database():
     print("Memuat 'database' dari CSV...")
+
+    data_folder = "Data"
+    
     data = {
         'competencies_yearly': pd.read_csv(os.path.join(data_folder, "Study Case DA - competencies_yearly.csv")),
         'dim_areas': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_areas.csv")),
@@ -332,4 +335,5 @@ if submitted:
 else:
 
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
+
 
