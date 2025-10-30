@@ -12,22 +12,22 @@ warnings.filterwarnings('ignore')
 def load_database():
     print("Memuat 'database' dari CSV...")
     data = {
-        'competencies_yearly': pd.read_csv("Data\Study Case DA - competencies_yearly.csv"),
-        'dim_areas': pd.read_csv("Data\Study Case DA - dim_areas.csv"),
-        'dim_companies': pd.read_csv("Data\Study Case DA - dim_companies.csv"),
-        'dim_competency_pillars': pd.read_csv("Data\Study Case DA - dim_competency_pillars.csv"),
-        'dim_departments': pd.read_csv("Data\Study Case DA - dim_departments.csv"),
-        'dim_directorates': pd.read_csv("Data\Study Case DA - dim_directorates.csv"),
-        'dim_divisions': pd.read_csv("Data\Study Case DA - dim_divisions.csv"),
-        'dim_education': pd.read_csv("Data\Study Case DA - dim_education.csv"),
-        'dim_grades': pd.read_csv("Data\Study Case DA - dim_grades.csv"),
-        'dim_majors': pd.read_csv("Data\Study Case DA - dim_majors.csv"),
-        'dim_positions': pd.read_csv("Data\Study Case DA - dim_positions.csv"),
-        'employees': pd.read_csv("Data\Study Case DA - employees.csv"),
-        'papi_scores': pd.read_csv("Data\Study Case DA - papi_scores.csv"),
-        'performance_yearly': pd.read_csv("Data\Study Case DA - performance_yearly.csv"),
-        'profiles_psych': pd.read_csv("Data\Study Case DA - profiles_psych.csv"),
-        'strengths': pd.read_csv("Data\Study Case DA - strengths.csv")
+        'competencies_yearly': pd.read_csv(os.path.join(data_folder, "Study Case DA - competencies_yearly.csv")),
+        'dim_areas': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_areas.csv")),
+        'dim_companies': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_companies.csv")),
+        'dim_competency_pillars': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_competency_pillars.csv")),
+        'dim_departments': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_departments.csv")),
+        'dim_directorates': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_directorates.csv")),
+        'dim_divisions': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_divisions.csv")),
+        'dim_education': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_education.csv")),
+        'dim_grades': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_grades.csv")),
+        'dim_majors': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_majors.csv")),
+        'dim_positions': pd.read_csv(os.path.join(data_folder, "Study Case DA - dim_positions.csv")),
+        'employees': pd.read_csv(os.path.join(data_folder, "Study Case DA - employees.csv")),
+        'papi_scores': pd.read_csv(os.path.join(data_folder, "Study Case DA - papi_scores.csv")),
+        'performance_yearly': pd.read_csv(os.path.join(data_folder, "Study Case DA - performance_yearly.csv")),
+        'profiles_psych': pd.read_csv(os.path.join(data_folder, "Study Case DA - profiles_psych.csv")),
+        'strengths': pd.read_csv(os.path.join(data_folder, "Study Case DA - strengths.csv"))
     }
     print("Database dimuat.")
     return data
@@ -329,4 +329,5 @@ if submitted:
             st.warning("Tidak ada kandidat yang cocok ditemukan.")
     
 else:
+
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
