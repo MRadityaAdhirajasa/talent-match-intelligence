@@ -1,4 +1,4 @@
-# Proyek Talent Match Intelligence (Studi Kasus 2025)
+# Proyek Talent Match Intelligence
 
 Streamlit : https://talent-match-intelligence-test.streamlit.app/
 
