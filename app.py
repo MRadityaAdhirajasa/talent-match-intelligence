@@ -4,6 +4,7 @@ import warnings
 import google.generativeai as genai
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 warnings.filterwarnings('ignore')
 
@@ -331,3 +332,4 @@ if submitted:
 else:
 
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
+
