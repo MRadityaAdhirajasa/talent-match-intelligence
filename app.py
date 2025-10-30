@@ -244,31 +244,55 @@ if submitted:
             Anda adalah asisten Perekrutan AI ahli.
             Tugas Anda adalah membuat profil pekerjaan profesional dalam Bahasa Indonesia, berdasarkan input yang diberikan.
             
-            Format output Anda HARUS mengikuti struktur spesifik ini:
-            1.  **Job requirements**: Daftar poin-poin persyaratan teknis dan soft-skill.
-            2.  **Job description**: Paragraf singkat yang menjelaskan inti dari peran tersebut.
-            3.  **key competencies**: Daftar poin-poin alat (tools) dan teknologi spesifik.
+            Format output Anda HARUS rapi, terstruktur dengan Markdown, dan WAJIB mengikuti struktur di bawah ini:
             
-            Berikut adalah CONTOH output yang bagus untuk peran "Data Analyst":
+            --- (mulai di sini) ---
+            **Profil Pekerjaan:** [Nama Peran dari Input]
+            **Level Pekerjaan:** [Level Pekerjaan dari Input]
+            
+            ---
+            
+            ### 1. Deskripsi Pekerjaan
+            (Tulis 1-2 paragraf deskriptif di sini.)
+            
+            ### 2. Persyaratan Kunci
+            * (Gunakan bullet point untuk setiap persyaratan)
+            * (Persyaratan harus detail dan relevan dengan peran)
+            * (Contoh: Keahlian dalam manajemen stakeholder)
+            
+            ### 3. Kompetensi Utama
+            * (Gunakan bullet point untuk setiap kompetensi)
+            * (Fokus pada tools, teknologi, atau metodologi spesifik)
+            * (Contoh: JIRA, Confluence, Metodologi Agile)
+            --- (selesai di sini) ---
+            
+            
+            Berikut adalah CONTOH output yang bagus untuk peran "Data Analyst" yang WAJIB Anda tiru formatnya:
+            
             --- CONTOH MULAI ---
-            Job requirements:
+            **Profil Pekerjaan:** Data Analyst
+            **Level Pekerjaan:** Middle
+            
+            ---
+            
+            ### 1. Deskripsi Pekerjaan
+            Anda mengubah pertanyaan bisnis menjadi jawaban berbasis data. Anda akan memiliki siklus analisis end-to-end: memahami konteks, menyusun dashboard yang jelas, dan membuat narasi yang mendorong keputusan. Anda menyeimbangkan kedalaman teknis (SQL, R/Python, BI) dengan pemikiran bisnis yang ketat.
+            
+            ### 2. Persyaratan Kunci
             * Keahlian SQL: complex joins, window functions, CTEs, performance tuning basics.
             * R atau Python untuk analisis (pandas/dplyr), statistik, dan prototyping cepat (Streamlit/Shiny/Dash).
             * BI tooling: Looker/Power BI/Tableau (modeling, permissions, dan production dashboards).
             * Fundamental data modeling (star schema, slowly changing dims, metrics layer) dan version control.
             * Praktik terbaik visualisasi dan data storytelling untuk audiens non-teknis.
             
-            Job description:
-            Anda mengubah pertanyaan bisnis menjadi jawaban berbasis data. Anda akan memiliki siklus analisis end-to-end: memahami konteks, menyusun dashboard yang jelas, dan membuat narasi yang mendorong keputusan. Anda menyeimbangkan kedalaman teknis (SQL, R/Python, BI) dengan pemikiran bisnis yang ketat.
-            
-            key competencies:
+            ### 3. Kompetensi Utama
             * SQL (Postgres/Snowflake/BigQuery), Git, DBT (nice), Airflow (nice)
             * R/Python (pandas/numpy/scipy atau tidyverse), Streamlit/Shiny
             * Looker/Tableau/Power BI, Excel/Sheets
             --- CONTOH SELESAI ---
             
-            Sekarang, gunakan format dan gaya yang SAMA PERSIS untuk membuat profil pekerjaan baru berdasarkan input berikut. 
-            JANGAN menyalin konten contoh di atas, tetapi tiru GAYA dan TINGKAT KEDETAILAN-nya.
+            
+            Sekarang, terapkan struktur yang SAMA PERSIS (termasuk Markdown `**`, `###`, `---`, dan `*` bullet points) untuk membuat profil pekerjaan baru berdasarkan input berikut.
             
             Input Baru:
             Nama Peran: {role_name}
@@ -359,6 +383,7 @@ if submitted:
 else:
 
     st.info("Silakan isi formulir di sidebar kiri untuk memulai.")
+
 
 
 
